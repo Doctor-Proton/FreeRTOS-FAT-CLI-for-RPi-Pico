@@ -27,7 +27,7 @@ specific language governing permissions and limitations under the License.
 #define configSYSTICK_CLOCK_HZ                  1000000  /* This is always 1MHz on ARM I think.... */
 #define configTICK_RATE_HZ                      1000      /* I personally like 1kHz so you can do 1 ms sleeps */
 #define configMAX_PRIORITIES                    5
-#define configMINIMAL_STACK_SIZE                128      /* you might want to increase this, especially if you do any floating point printf  *YIKES* */
+#define configMINIMAL_STACK_SIZE                512      /* you might want to increase this, especially if you do any floating point printf  *YIKES* */
 #define configMAX_TASK_NAME_LEN                 16
 #define configUSE_16_BIT_TICKS                  0
 #define configIDLE_SHOULD_YIELD                 1
@@ -42,10 +42,11 @@ specific language governing permissions and limitations under the License.
 #define configUSE_QUEUE_SETS                    1
 #define configUSE_TIME_SLICING                  1 
 #define configUSE_NEWLIB_REENTRANT              1   // Necessary if any floating point printfs are used!
-#define configENABLE_BACKWARD_COMPATIBILITY     0
+#define configENABLE_BACKWARD_COMPATIBILITY     1
 #define configNUM_THREAD_LOCAL_STORAGE_POINTERS 5
 #define configSTACK_DEPTH_TYPE                  uint16_t
 #define configMESSAGE_BUFFER_LENGTH_TYPE        size_t
+#define configUSE_CORE_AFFINITY 		1
 
 /* Memory allocation related definitions. */
 #define configSUPPORT_STATIC_ALLOCATION         1
@@ -61,9 +62,9 @@ specific language governing permissions and limitations under the License.
 #define configUSE_DAEMON_TASK_STARTUP_HOOK      0
 
 /* Run time and task stats gathering related definitions. */
-#define configGENERATE_RUN_TIME_STATS           1
+#define configGENERATE_RUN_TIME_STATS           0
 #define configUSE_TRACE_FACILITY                1
-#define configUSE_STATS_FORMATTING_FUNCTIONS    1
+#define configUSE_STATS_FORMATTING_FUNCTIONS    0
 
 /* Co-routine related definitions. */
 #define configUSE_CO_ROUTINES                   0
@@ -83,7 +84,7 @@ specific language governing permissions and limitations under the License.
 /* SMP port only */
 #define configNUM_CORES                         2
 #define configTICK_CORE                         0
-#define configRUN_MULTIPLE_PRIORITIES           0
+#define configRUN_MULTIPLE_PRIORITIES           1
 
 /* RP2040 specific */
 #define configSUPPORT_PICO_SYNC_INTEROP         1

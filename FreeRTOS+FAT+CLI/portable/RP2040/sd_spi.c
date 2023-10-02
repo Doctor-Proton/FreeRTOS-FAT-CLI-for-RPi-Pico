@@ -25,6 +25,8 @@ specific language governing permissions and limitations under the License.
 #include "sd_spi.h"
 #include "spi.h"
 
+#include "pico/time.h"
+
 //#define TRACE_PRINTF(fmt, args...)
 #define TRACE_PRINTF printf  // task_printf
 
